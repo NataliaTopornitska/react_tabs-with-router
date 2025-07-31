@@ -15,23 +15,21 @@ export const App = () => {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link
-              to="/"
-              className={classNames('navbar-item', {
-                'is-active': location.pathname === '/',
-              })}
-            >
-              Home
-            </Link>
+            <ul className="navbar-menu is-flex">
+              <li
+                className={classNames({ 'is-active': location.pathname === '/' })}
+              >
+                <Link to="/" className="navbar-item">Home</Link>
+              </li>
 
-            <Link
-              to="/tabs"
-              className={classNames('navbar-item', {
-                'is-active': location.pathname.startsWith('/tabs'),
-              })}
-            >
-              Tabs
-            </Link>
+              <li
+                className={classNames({
+                  'is-active': location.pathname.startsWith('/tabs'),
+                })}
+              >
+                <Link to="/tabs" className="navbar-item">Tabs</Link>
+              </li>
+            </ul>
           </div>
         </div>
       </nav>
